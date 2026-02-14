@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SchoolBot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <div class="header">
+            <img src="{{ url_for('static', filename='podar.png') }}" class="logo">
+            <h2>SchoolBot</h2>
+        </div>
+
+        <div class="chat-box">
+            {% if reply %}
+                <p class="bot-reply"><b>Bot:</b> {{ reply }}</p>
+            {% else %}
+                <p class="bot-reply"><b>Bot:</b> Hello! Ask me anything about your school 📚</p>
+            {% endif %}
+        </div>
+
+        <form method="post" class="form-area">
+            <input type="text" name="message" placeholder="Type your message..." required>
+            <button type="submit">Send</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
